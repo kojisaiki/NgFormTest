@@ -1,18 +1,17 @@
-<form #f="ngForm" novalidate>
+<form [formGroup]="fgroup" novalidate>
   <p>
     <label>parentform1</label>
-    <input type="text" name="parentform1" placeholder="parentform1" [(ngModel)]="vm.parentform1" required/>
+    <input type="text" placeholder="parentform1" formControlName="parentform1"/>
   </p>
-  <app-reactiveform-child></app-reactiveform-child>
+  <app-reactiveform-child [fgroup]="fgroup" ></app-reactiveform-child>
 </form>
 
 <div>
-  <h2>form data</h2>
-  {{ f.value | json }}
+  <h2>formgroup</h2>
+  {{ fgroup.value | json }}
 
   <h2>validation</h2>
-  {{ f.form.valid ? "true" : "false" }}
-
-  <h2>viewmodel data</h2>
-  {{ vm | json }}
+  {{ fgroup.valid ? "true" : "false" }}
 </div>
+
+<button (click)="getmodel()">getmodel</button>

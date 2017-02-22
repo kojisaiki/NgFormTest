@@ -1,4 +1,6 @@
+  <form [formGroup]="fgroup" novalidate>
   <p>
     <label>childform1</label>
-    <input type="text" name="childform1" placeholder="childform1" [(ngModel)]="vm.childform1" required/>
+    <input type="text" placeholder="childform1" formControlName="childform1"/>
   </p>
+  </form>
