@@ -1,0 +1,18 @@
+<form #f="ngForm" novalidate>
+  <p>
+    <label>parentform1</label>
+    <input type="text" name="parentform1" placeholder="parentform1" [(ngModel)]="vm.parentform1" required/>
+  </p>
+  <app-reactiveform-child></app-reactiveform-child>
+</form>
+
+<div>
+  <h2>form data</h2>
+  {{ f.value | json }}
+
+  <h2>validation</h2>
+  {{ f.form.valid ? "true" : "false" }}
+
+  <h2>viewmodel data</h2>
+  {{ vm | json }}
+</div>
